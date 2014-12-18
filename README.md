@@ -39,6 +39,10 @@ get the idea...
 
 ## FAQ
 
+### How about thread safety?
+
+As neither Nashorn nor Finagle guarantee against concurrent re-entry to the JavaScript context, things might easily go wrong. Treating shared JavaScript variables as immutable should prevent most of the problems. [More about Nashorn thread safety](https://blogs.oracle.com/nashorn/entry/nashorn_multi_threading_and_mt).
+
 ### How do I specify Java version?
 
 Do this on mac: ```JAVA_HOME=`/usr/libexec/java_home -v 1.8` ./sbt run```
